@@ -1,7 +1,7 @@
 from tracker import db
 from flask import Flask, Blueprint, render_template,flash,url_for,redirect
 from werkzeug.security import generate_password_hash, check_password_hash
-from tracker.auth.forms import RegistrationForm
+from tracker.auth.forms import RegistrationForm,LoginForm
 from tracker.model import User 
 
 auth = Blueprint("auth", __name__, template_folder="templates")
@@ -10,7 +10,8 @@ auth = Blueprint("auth", __name__, template_folder="templates")
 
 @auth.route("/login")
 def login():
-    return render_template("users/login.html")
+    form = LoginForm() 
+    return render_template("users/login.html",form=form)
 
 
 @auth.route("/register", methods=["GET", "POST"])

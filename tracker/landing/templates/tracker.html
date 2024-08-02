@@ -1,0 +1,73 @@
+{{ extends "base.html"}}
+{{ block content}}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Health Trackers</title>
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+</head>
+<body class="bg-gray-100 p-10">
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+        <button class="flex items-center bg-white p-6 rounded-lg shadow-md hover:shadow-xl transition">
+            <div class="w-12 h-12 bg-purple-200 rounded-full flex items-center justify-center mr-4">
+                <span class="text-purple-500">💧</span>
+            </div>
+            <div>
+                <h2 class="text-lg font-semibold">Period Tracker</h2>
+                <p class="text-gray-500">Enter information about your period, observe trends and estimate the start of the next one</p>
+            </div>
+        </button>
+        
+        <button class="flex items-center bg-white p-6 rounded-lg shadow-md hover:shadow-xl transition">
+            <div class="w-12 h-12 bg-purple-200 rounded-full flex items-center justify-center mr-4">
+                <span class="text-purple-500">💧</span>
+            </div>
+            <div>
+                <h2 class="text-lg font-semibold">Ovulation Tracker</h2>
+                <p class="text-gray-500">Track your periods, observe trends and get estimates about your fertile days</p>
+            </div>
+        </button>
+
+        <button class="flex items-center bg-white p-6 rounded-lg shadow-md hover:shadow-xl transition">
+            <div class="w-12 h-12 bg-purple-200 rounded-full flex items-center justify-center mr-4">
+                <span class="text-purple-500">👶</span>
+            </div>
+            <div>
+                <h2 class="text-lg font-semibold">Pregnancy Tracker</h2>
+                <p class="text-gray-500">Enter data related to your pregnancy and track the progress during the gestation</p>
+            </div>
+        </button>
+
+        <button class="flex items-center bg-white p-6 rounded-lg shadow-md hover:shadow-xl transition">
+            <div class="w-12 h-12 bg-purple-200 rounded-full flex items-center justify-center mr-4">
+                <span class="text-purple-500">🍼</span>
+            </div>
+            <div>
+                <h2 class="text-lg font-semibold">Baby Tracker</h2>
+                <p class="text-gray-500">Enter data related to your baby, observe trends and monitor the growth</p>
+            </div>
+        </button>
+
+        <button class="flex items-center bg-white p-6 rounded-lg shadow-md hover:shadow-xl transition">
+            <div class="w-12 h-12 bg-purple-200 rounded-full flex items-center justify-center mr-4">
+                <span class="text-purple-500">⚡</span>
+            </div>
+            <div>
+                <h2 class="text-lg font-semibold">Contraction Tracker</h2>
+                <p class="text-gray-500">Track your contractions and observe trends and activity levels during gestation</p>
+            </div>
+        </button>
+
+        <button class="flex items-center bg-white p-6 rounded-lg shadow-md hover:shadow-xl transition">
+            <div class="w-12 h-12 bg-purple-200 rounded-full flex items-center justify-center mr-4">
+                <span class="text-purple-500">👶</span>
+            </div>
+            <div>
+                <h2 class="text-lg font-semibold">Baby Movement Tracker</h2>
+                <p class="text-gray-500">Track your baby's movements and observe trends and activity levels during gestation</p>
+            </div>
+        </button>
+    </div>
+{{ endblock}}
