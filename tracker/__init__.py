@@ -1,9 +1,6 @@
 import os
 from flask import Flask, Blueprint
 from flask_sqlalchemy import SQLAlchemy
-from tracker import auth
-from tracker import landing
-
 
 basedir = os.path.abspath(os.path.dirname(__file__))
 
@@ -22,9 +19,11 @@ db.init_app(app)
 
 from tracker.auth.routes import auth as auth_blueprint
 from tracker.landing.routes import landing as landing_blueprint
+from tracker.main.routes import main as main_blueprint
 
 
 app.register_blueprint(auth_blueprint)
 app.register_blueprint(landing_blueprint)
+app.register_blueprint(main_blueprint)
 
 print("Blueprint registered successfully")
