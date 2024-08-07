@@ -5,7 +5,7 @@ from wtforms.validators import DataRequired, Length, Email, EqualTo, ValidationE
 from email_validator import validate_email, EmailNotValidError
 
 
-class RegistrationForm(FlaskForm):
+class UserForm(FlaskForm):
     email = StringField("Email Address", validators=[DataRequired(), Email()])
     username = StringField(
         "Username", validators=[DataRequired(), Length(min=2, max=20)]

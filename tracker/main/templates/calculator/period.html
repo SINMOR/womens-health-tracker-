@@ -1,0 +1,60 @@
+{% extends "base.html"%}
+{% block content %}
+    <style>
+        .custom-button {
+            background: linear-gradient(to right, #5e595a, #5e595a);
+        }
+    </style>
+</head>
+<body class="bg-gray-100 p-10">
+    <div class="max-w-lg mx-auto bg-white p-6 rounded-lg shadow-md">
+        <form id="period-form">
+            <div class="mb-4">
+                <label for="last-period" class="block text-gray-700">When did your last period start?</label>
+                <input type="date" id="last-period" name="last_period" class="w-full p-2 border rounded">
+            </div>
+            <div class="flex justify-between mb-4">
+                <div class="w-1/2 mr-2">
+                    <label for="days-last" class="block text-gray-700">How many days did it last?</label>
+                    <div class="flex items-center border rounded p-2">
+                        <button type="button" id="decrease-days" class="text-xl px-2">-</button>
+                        <input type="number" id="days-last" name="days_last" value="5" class="w-full text-center focus:outline-none">
+                        <button type="button" id="increase-days" class="text-xl px-2">+</button>
+                    </div>
+                </div>
+                <div class="w-1/2 ml-2">
+                    <label for="cycle-length" class="block text-gray-700">Average cycle length (days)</label>
+                    <div class="flex items-center border rounded p-2">
+                        <button type="button" id="decrease-cycle" class="text-xl px-2">-</button>
+                        <input type="number" id="cycle-length" name="cycle_length" value="28" class="w-full text-center focus:outline-none">
+                        <button type="button" id="increase-cycle" class="text-xl px-2">+</button>
+                    </div>
+                </div>
+            </div>
+            <button type="submit" class="w-full py-2 text-white font-bold rounded custom-button">See results</button>
+        </form>
+    </div>
+
+    <script>
+        document.getElementById('decrease-days').addEventListener('click', function() {
+            var daysLast = document.getElementById('days-last');
+            if (daysLast.value > 1) daysLast.value--;
+        });
+
+        document.getElementById('increase-days').addEventListener('click', function() {
+            var daysLast = document.getElementById('days-last');
+            daysLast.value++;
+        });
+
+        document.getElementById('decrease-cycle').addEventListener('click', function() {
+            var cycleLength = document.getElementById('cycle-length');
+            if (cycleLength.value > 1) cycleLength.value--;
+        });
+
+        document.getElementById('increase-cycle').addEventListener('click', function() {
+            var cycleLength = document.getElementById('cycle-length');
+            cycleLength.value++;
+        });
+    </script>
+</body>
+{% endblock content %}
