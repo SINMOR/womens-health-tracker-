@@ -11,9 +11,12 @@ class User(db.Model):
     periods = db.relationship(
         "Period", backref="user", lazy=True
     )  # inputs a  one to many relationship with the period table
-    periods = db.relationship(
+    ovulation = db.relationship(
         "Ovulation", backref="user", lazy=True
     )  # inputs a  one to many relationship with the period table
+
+    def __repr__(self):
+        return f"User('{self.username}','{self.email}','{self.date_of_birth}')"
 
 
 class Period(db.Model):
@@ -26,6 +29,11 @@ class Period(db.Model):
     cycle_length = db.Column(db.Integer, nullable=False)
     created_at = db.Column(db.DateTime, nullable=False, default=datetime.utcnow)
 
+    def __repr__(self):
+        return (
+            f"Period('{self.start_date}','{self.duration_days}','{self.cycle_length}')"
+        )
+
 
 class Ovulation(db.Model):
     id = db.Column(db.Integer, primary_key=True)
@@ -35,3 +43,6 @@ class Ovulation(db.Model):
     start_date = db.Column(db.Date, nullable=False)
     cycle_length = db.Column(db.Integer, nullable=False)
     created_at = db.Column(db.DateTime, nullable=False, default=datetime.utcnow)
+
+    def __repr__(self):
+        return f"Ovulation('{self.start_date}','{self.cycle_length}','{self.cycle_length}')"

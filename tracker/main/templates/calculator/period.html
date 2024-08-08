@@ -11,14 +11,14 @@
         <form id="period-form">
             <div class="mb-4">
                 <label for="last-period" class="block text-gray-700">When did your last period start?</label>
-                <input type="date" id="last-period" name="last_period" class="w-full p-2 border rounded">
+                {{form.startdate(type="date" id="last-period" name="last_period" class="w-full p-2 border rounded")}}
             </div>
             <div class="flex justify-between mb-4">
                 <div class="w-1/2 mr-2">
                     <label for="days-last" class="block text-gray-700">How many days did it last?</label>
                     <div class="flex items-center border rounded p-2">
                         <button type="button" id="decrease-days" class="text-xl px-2">-</button>
-                        <input type="number" id="days-last" name="days_last" value="5" class="w-full text-center focus:outline-none">
+                        {{ form.duration_days(type="number" id="days-last" name="days_last" value="5" class="w-full text-center focus:outline-none") }}
                         <button type="button" id="increase-days" class="text-xl px-2">+</button>
                     </div>
                 </div>
@@ -26,7 +26,7 @@
                     <label for="cycle-length" class="block text-gray-700">Average cycle length (days)</label>
                     <div class="flex items-center border rounded p-2">
                         <button type="button" id="decrease-cycle" class="text-xl px-2">-</button>
-                        <input type="number" id="cycle-length" name="cycle_length" value="28" class="w-full text-center focus:outline-none">
+                        {{ form.cycle_length(type="number" id="cycle-length" name="cycle_length" value="28" class="w-full text-center focus:outline-none") }}
                         <button type="button" id="increase-cycle" class="text-xl px-2">+</button>
                     </div>
                 </div>
